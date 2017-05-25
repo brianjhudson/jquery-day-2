@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <title>JQueryGram</title>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <link href="styles/normalize.css" rel="stylesheet">
+      <link href="styles/style.css" rel="stylesheet">
+      <script src="scripts/jquery-3.2.1.js"></script>
+      <script src="scripts/script.js"></script>
+   </head>
+   <body>
+      <div class="container">
+         <nav>
+               <div class="logo"></div>
+               <input class="search" type="search" placeholder="Search">
+               <div class="icons">
+                  <div class="add"></div>
+                  <div class="feed"></div>
+                  <div class="profile"></div>
+               </div>
+         </nav>
+
+         <main>
+            <sidebar class="add-photo">
+               <form>
+                  <div class="close">&times;</div>
+                  <label for="image-url">Image Url:</label>
+                  <input id="image-url" type="url" placeholder="https://image.com"/>
+                  <label for="image-caption">Caption:</label>
+                  <textarea id="image-caption" placeholder="Enter caption here"></textarea>
+                  <div class="submit">
+                     <button class="submit-button">Submit</button>
+                  </div>
+               </form>
+            </sidebar>
+            <section class="photo-feed">
+                  <div class="photo-card">
+                        <div class="photo-container">
+                              <img src="assets/Paris.jpg" alt="">
+                        </div>
+                        <div class="photo-icons-container">
+                              <div class="likes"></div>
+                              <div class="comments"></div>
+                        </div>
+                        <div class="photo-expanded-view-container">
+                              <div class="photo-expanded-view">
+                                    <div class="close">&times;</div>
+                                    <div class="photo-expanded-photo">
+                                          <img src="assets/Paris.jpg" alt="">
+                                    </div>
+                                    <div class="photo-expanded-info">
+                                          <p class="author">Brian</p>
+                                          <p class="caption">My stock photo</p>
+                                    </div>
+                                    <div class="photo-expanded-comments">
+                                          <div class="comments-container">
+                                                <div class="comment">
+                                                      <p class="comment-author">Brian</p>
+                                                      <p class="comment-text">Love it</p>
+                                                </div>
+                                          </div>
+                                          <div class="comment-input-container">
+                                                <input type="text" id="comment-input" placeholder="Enter a comment here">
+                                          </div>
+                                    </div>
+                              </div>
+                        </div>
+                  </div>
+            </section>
+         </main>
+
+         <footer>
+
+         </footer>
+      </div>
+   </body>
+</html>

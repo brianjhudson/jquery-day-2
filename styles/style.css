@@ -1,0 +1,270 @@
+* {
+   box-sizing: border-box;
+   --sprite-url: url("http://instagramstatic-a.akamaihd.net/h1/sprites/core/37402f.png");
+   --primary-border-color: #dbdbdb;
+   --primary-text-color: #262626;
+   font-family: 'Raleway', sans-serif;
+}
+
+.hidden {
+   display: none;
+}
+
+.container {
+   height: 100vh;
+}
+
+nav, footer {
+   height: 3em;
+   display: flex;
+   justify-content: space-around;
+   align-items: center;
+}
+
+nav div {
+   height: 100%;
+   text-align: center;
+}
+
+.logo {
+   height: 35px;
+   width: 176px;
+   background: var(--sprite-url) -176px 0px / 352px 311px;
+}
+
+input, textarea {
+   border: 1px solid var(--primary-border-color);
+   color: var(--primary-text-color);
+   border-radius: .25em;
+   padding: .25em;
+}
+
+.search {
+   width: 20em;
+   text-align: center;
+}
+
+.icons {
+   display: flex;
+   justify-content: space-between;
+   margin-top: 1em;
+   flex-wrap: nowrap;
+}
+
+.add, .feed, .profile {
+   display: inline-block;
+   margin-left: 1em;
+   width: 1.75em;
+}
+
+.add {
+   margin-right: -0.5em;
+   background: var(--sprite-url) 143px 104px / 194px 125px;
+   width: 45px;
+   height: 2.05em;
+   transform: scale(0.65, 0.75);
+}
+
+.feed {
+   margin-top: -3px;
+   background: var(--sprite-url) -326px -224px / 354px 321px;
+}
+
+.profile {
+   margin-top: -3px;
+   background: var(--sprite-url) -360px -224px / 241px 321px;
+   width: 1.1em;
+   transform: scaleX(1.6)
+}
+
+main {
+   height: calc(100% - 6em);
+}
+
+.add-photo {
+   position: absolute;
+   left: -100%;
+   z-index: 10;
+   width: 30%;
+   height: 100%;
+   padding: 1em;
+   background: var(--primary-text-color);
+   color: var(--primary-border-color);
+   font-size: .85em;
+   transition: left .75s;
+}
+
+.add-photo.active {
+   left: 0;
+   z-index: 10;
+}
+
+.close {
+   font-size: 2em;
+   text-align: right;
+}
+
+.add-photo input, textarea {
+   width: 90%;
+   margin: 1em;
+}
+
+.add-photo textarea {
+   height: 10em;
+}
+
+.add-photo .submit {
+   margin: 1em;
+   text-align: center;
+}
+
+.add-photo button {
+   width: 10em;
+   margin: 1em;
+   padding: .75em;
+   background: hsl(210, 80%, 60%);
+   border: var(--primary-border-color);
+}
+
+.photo-feed {
+   height: 100%;
+   width: 100%;
+   display: flex;
+   padding: 2em;
+}
+
+.photo-card {
+   width: 250px;
+   height: 250px;
+   position: relative;
+}
+
+.photo-container {
+   width: 100%;
+   height: 100%;
+}
+
+.photo-container img {
+   width: 100%;
+   height: 100%;
+   object-fit: cover;
+}
+
+.photo-icons-container {
+   display: none;
+   align-items: center;
+   justify-content: center;
+   position: absolute;
+   top: 0;
+   width: 100%;
+   height: 100%;
+   z-index: 3;
+   background: #000;
+   opacity: 0.5;
+}
+
+.photo-icons-container.active {
+   display: flex;
+}
+
+.likes, .comments {
+   width: 28px;
+   height: 18px;
+   background: #fff;
+}
+
+.likes {
+   background: var(--sprite-url) 0px -549px / 496px 292px;
+}
+
+.likes.liked {
+   background: var(--sprite-url) -150px -234px / 354px 321px;
+   height: 20px;
+}
+
+.comments {
+   margin-left: 1.5em;
+   background: var(--sprite-url) -55px -549px / 496px 292px;
+}
+
+.photo-expanded-view-container {
+   display: none;
+   position: fixed;
+   top: 0;
+   left: 0;
+   width: 100%;
+   height: 100%;
+   z-index: 20;
+   background: hsla(0, 0%, 0%, 0.75);
+}
+
+.photo-expanded-view-container.active {
+   display: block;
+   padding: 4em;
+}
+
+.photo-expanded-view {
+   width: 80%;
+   height: 80%;
+   margin: 8% auto;
+   padding: 1.5em;
+   background: #fff;
+   overflow: scroll;
+}
+
+.photo-expanded-photo {
+   width: 80%;
+   margin: 0 auto;
+   text-align: center;
+}
+
+.photo-expanded-photo {
+   height: 60%;
+   width: auto;
+}
+
+.photo-expanded-info, .photo-expanded-comments  {
+   width: 80%;
+   margin: 0 auto;
+   font-size: 1em;
+}
+
+.photo-expanded-info {
+   border-bottom: 1px solid var(--primary-border-color);
+}
+
+.author, .comment-author {
+   display: inline-block;
+   font-weight: bold;
+}
+
+.author {
+   margin: 0;
+}
+
+.caption {
+}
+
+.comment-author, .comment-text {
+   display: inline-block;
+   font-size: .75em;
+}
+
+#comment-input {
+   width: 100%;
+   font-size: .75em;
+}
+
+@media screen and (max-width: 900px) {
+   .logo {
+      width: 35px;
+   }
+}
+@media screen and (max-width: 700px) {
+   nav .search {
+      display: none;
+   }
+   .add-photo {
+      width: 100%;
+   }
+}
